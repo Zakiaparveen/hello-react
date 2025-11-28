@@ -1,3 +1,27 @@
-h1{
-  color: red;
+/* Headings */
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;   /* Heading bhi center */
+  width: 100%;
+}
+
+/* Parent container */
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* cards center horizontally */
+  justify-content: center; /* optional */
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;             /* <-- correct width */
+}
+
+/* Card Style */
+.card {
+  width: 260px;
+  background-color: rgb(59, 22, 114);
+  color: azure;
+  border-radius: 10px;
+  padding: 20px;
+  /* text-align: left; */
 }
