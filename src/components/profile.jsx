@@ -6,14 +6,16 @@ function Profile (props) {
     { studentid: 2, name: "Ali", phone: "033322211", bio: "I love coding." },
     { studentid: 3, name: "Sara", phone: "030012345", bio: "Frontend developer." }
   ];
-
+let res=students.filter((std)=>{
+ return  props.id .includes(std.studentid);
+})
   return (
     <>
       <h1>{props.studentinfo}</h1>
 
       {/* 2: Map data in card format - **Added the .parent div here** */}
       <div className="parent"> 
-        {students.map((std) => {
+        {res.map((std) => {
           return (
             <div key={std.studentid} className="card">
             
