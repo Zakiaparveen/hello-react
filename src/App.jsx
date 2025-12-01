@@ -6,12 +6,11 @@ import User from './components/Footer';
 // import Student from './components/studentcard';
 // let studentid=1;
 function App() {
-let id=3;
-id=2;
+
   return (
     <div>
     {/* <Employee id={[3,1]} /> */}
-    <Profile id={[3,4]} studentinfo="student information"/> 
+    <Profile id="3"studentinfo="student information"/> 
 {/* <Student studentinfo="Student ID Card" /> */}
 
     {/* <Profile  /> */}
@@ -23,11 +22,3 @@ id=2;
 }
 
 export default App;
-
-// Let's add something interesting,  pass a student id from props and only render the student data in a card based on student_id 
-
-// Concepts to explore:
-// 1- Filtering from array
-// 2- Conditional rendering (ternary operator) 
-
-// Can consult react docs.

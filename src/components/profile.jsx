@@ -7,29 +7,25 @@ function Profile (props) {
     { studentid: 3, name: "Sara", phone: "030012345", bio: "Frontend developer." }
   ];
 let res=students.find((std)=>{
- return  props.id .includes(std.studentid);
+ return String(std.studentid)==props.id
 })
-  return (
-    <>
-      <h1>{props.studentinfo}</h1>
-
-      {/* 2: Map data in card format - **Added the .parent div here** */}
-      <div className="parent"> 
-      {
-        res? (
-            <div key={res.studentid} className="card">
+ return (
+   <div className="parent"> 
+ { res ?(
+ <div key={res.studentid} className="card">
               <h2>ID: {res.studentid}</h2>
               <h3>Name: {res.name}</h3>
               <p>Phone: {res.phone}</p>
               <p>Bio: {res.bio}</p>
             </div>
-          )
-        :
-       ("student not found")
+ )
+       
+    :("not found")    
       }
+      
       </div>
-    </>
-  );
+    
+  )
 }
 
 export default Profile;
