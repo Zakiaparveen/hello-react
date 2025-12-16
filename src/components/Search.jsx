@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MdLocationOn, MdNotificationsNone,MdSearch } from "react-icons/md";
+import { MdLocationOn, MdNotificationsNone, MdSearch } from "react-icons/md";
 
 import clear from "../assets/clear.png";
 import clouds from "../assets/clouds.png";
@@ -25,14 +25,14 @@ function Search() {
     )
       .then((res) => res.json())
       .then((data) => {
-        if(data.error){
+        if (data.error) {
           setError("City not found")
           setWeather(null)
-        }else{
-        setWeather(data);
-        setError(null);
+        } else {
+          setWeather(data);
+          setError(null);
         }
-         setLoading(false);
+        setLoading(false);
       })
       .catch(() => {
         setError("City not found");
@@ -63,7 +63,7 @@ function Search() {
     haze: mist,
   };
 
-  // 🔒 image key (only from current weather)
+
   const conditionText =
     weather?.current?.condition?.text?.toLowerCase() || "";
 
@@ -71,9 +71,9 @@ function Search() {
     conditionText.includes(key)
   );
   const handleSearch = () => {
-  if (!inputValue.trim()) return;   // empty check
-  setCity(inputValue);              // 🔥 yahin API trigger hogi
-};
+    if (!inputValue.trim()) return;  
+    setCity(inputValue);              
+  };
 
 
   return (
@@ -84,13 +84,13 @@ function Search() {
           <div className="location">
             <MdLocationOn className="loc-icon" />
             <input
-            type="text"
-            placeholder="Search City"
+              type="text"
+              placeholder="Search City"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
-         <MdSearch className="search" onClick={handleSearch} />
-   
+            <MdSearch className="search" onClick={handleSearch} />
+
           </div>
           <MdNotificationsNone className="notify-icon" />
         </div>
@@ -100,7 +100,7 @@ function Search() {
 
         {weather && !loading && (
           <>
-            {/* 🌤 MAIN WEATHER IMAGE (ONLY ONE PLACE) */}
+           
             {weatherImageKey && (
               <img
                 src={weatherImages[weatherImageKey]}
@@ -108,7 +108,7 @@ function Search() {
                 className="weather-img"
               />
             )}
-<h3>{weather.location.name}</h3>
+            <h3>{weather.location.name}</h3>
             <h1 className="temp">{weather.current.temp_c}°C</h1>
             <p className="label">Precipitations</p>
 
@@ -128,14 +128,14 @@ function Search() {
                 <span>{weather.current.precip_mm} mm</span>
               </div>
             </div>
-
+            {/* today section  */}
             <div className="today">
               <div className="Date">
                 <h4>Today</h4>
                 <h4>
                   {new Date().toLocaleDateString("en-US", {
-                    day: "numeric",   // date number
-                    month: "short"    // month ka short form (Jan, Feb, Mar...)
+                    day: "numeric",   
+                    month: "short"    
                   })}
                 </h4>
               </div>
@@ -173,7 +173,7 @@ function Search() {
             </div>
 
 
-            
+
           </>
         )}
       </div>
