@@ -1,26 +1,280 @@
-.search-box {
+button {
+  padding-bottom: 20px;
+  /* width: 100vw; */
+}
+
+h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -30px;
+  color: white;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 35vh;
+  
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.label {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+
+.humidity,
+.wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  /* controlled spacing */
+}
+
+
+.humidity img,
+.wind img {
+  margin-bottom: 6px;
+}
+
+.bottom {
   display: flex;
   align-items: center;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 3px;
+
+  /* ⭐ secret sauce */
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04))
 }
 
-.search-box input {
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 16px;
+
+
+
+
+
+table,
+th,
+td {
+  border-radius: 3px;
+  border: 2px solid rgb(0, 0, 0);
+  border-collapse: collapse;
 }
 
+th,
+td {
+  padding: 3px;
+
+}
+
+th {
+  background-color: #060606;
+  color: rgb(255, 255, 255);
+  border: 2px;
+
+}
+
+table {
+  width: 30vw;
+}
+
+input {
+  border-radius: 6px;
+  background-color: white;
+  /* width: 20vw; */
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+
+}
+
+input::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+
+input:focus {
+  border-color: #2563eb;
+  /* blue */
+  box-shadow: 0 0 4px #2563eb;
+}
+
+
+
+.card {
+  width: 300px;
+  padding: 24px 20px 28px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #0b3c91, #0a2a66);
+  color: white;
+  text-align: center;
+}
+
+
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 2px;
+}
+
+/* LOCATION */
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  /* ⭐ secret sauce */
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04));
+
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* location icon */
 .loc-icon {
-  font-size: 22px;
-  color: #2563eb;
+  font-size: 18px;
+  color: white;
+}
+.search{
+   font-size: 30px;
+  color: white;
 }
 
-.search-icon {
+/* SELECT WRAPPER */
+.location {
+  position: relative;
+}
+
+
+/* notification */
+.notify-icon {
   font-size: 22px;
+  color: white;
   cursor: pointer;
-  color: #2563eb;
+}
+
+
+.weather-img {
+  width: 120px;
+  margin: 20px auto 10px;
+  display: block;
+}
+
+.temp {
+  font-size: 44px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.label {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+ .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-top: 10px;
+} 
+
+.bottom .b1 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wind {
+  width: 22px;
+  /* optional */
+  height: auto;
+}
+
+
+
+.hours {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  /* horizontal scroll */
+  padding-bottom: 8px;
+}
+
+.hours::-webkit-scrollbar {
+  height: 5px;
+}
+
+.hours::-webkit-scrollbar-thumb {
+  background: #cdeeed;
+  border-radius: 10px;
+}
+
+/* SINGLE CARD */
+.hour-card {
+  min-width: 40px;
+  /* card width */
+  height: 70px;
+  /* background: #ebfffc; */
+  border-radius: 20px;
+  border: 1px solid #0b3c91;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* top temp, center icon, bottom time */
+  align-items: center;
+  flex-shrink: 0;
+  /* important for scroll */
+}
+
+.today {
+  margin-top: 20px;
+  height: 20vh;
+  background-color: #0a2a66;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+/* TOP TEMP */
+.hour-temp {
+  font-size: 18px;
+  font-weight: 600;
+  color: #cdeeed;
+}
+
+/* ICON */
+.hour-icon {
+  width: 34px;
+}
+
+/* TIME */
+.hour-time {
+  font-size: 13px;
+  color: #cdeeed;
+}
+
+.Date {
+  display: flex;
+  justify-content: space-between;
 }

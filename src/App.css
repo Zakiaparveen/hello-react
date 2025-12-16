@@ -10,15 +10,6 @@ h2 {
   color: white;
 }
 
-.parent {
-  display: flex;
-  justify-content: center;
-  place-items: center;
-  text-align: center;
-  align-items: center;
-  width: 100vw;
-  min-height: 35vh;
-}
 
 .value {
   font-size: 18px;
@@ -53,10 +44,9 @@ h2 {
   gap: 3px;
 
   /* ⭐ secret sauce */
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.12),
-    rgba(255, 255, 255, 0.04))
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04))
 }
 
 .parts {
@@ -192,11 +182,9 @@ input:focus {
   gap: 6px;
 
   /* ⭐ secret sauce */
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.12),
-    rgba(255, 255, 255, 0.04)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04));
 
   padding: 6px 12px;
   border-radius: 20px;
@@ -222,7 +210,8 @@ input:focus {
   font-size: 15px;
   cursor: pointer;
 
-  padding: 2px 26px 2px 4px; /* arrow space */
+  padding: 2px 26px 2px 4px;
+  /* arrow space */
   line-height: 1;
 
   appearance: none;
@@ -239,7 +228,8 @@ input:focus {
 .location::after {
   content: "▾";
   position: absolute;
-  right: 6px;              /* ⭐ close to text */
+  right: 6px;
+  /* ⭐ close to text */
   top: 50%;
   transform: translateY(-50%);
   color: white;
@@ -260,6 +250,7 @@ input:focus {
   margin: 20px auto 10px;
   display: block;
 }
+
 .temp {
   font-size: 44px;
   font-weight: 600;
@@ -271,28 +262,17 @@ input:focus {
   opacity: 0.8;
   margin-bottom: 6px;
 }
+
 .bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 14px;
+  padding: 10px 14px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.12);
   margin-top: 10px;
 }
-/* .today{
-  padding:8px;
-   height: 8vh;
-  border-radius: 12px;
-  /* width:50vw; */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  background-color:
-    #0d3c89;
-  
-} */
+
 .bottom .b1 {
   display: flex;
   align-items: center;
@@ -300,27 +280,30 @@ input:focus {
 }
 
 .wind {
-  width: 22px;           /* optional */
+  width: 22px;
+  /* optional */
   height: auto;
 }
+
 .bottom span {
   font-size: 13px;
   font-weight: 500;
 }
+
 .today {
   margin-top: 20px;
   height: 20vh;
   background-color: #0a2a66;
   padding-left: 20px;
   padding-right: 20px;
-  
   border-radius: 10px;
 }
 
 .hours {
   display: flex;
   gap: 10px;
-  overflow-x: auto;           /* horizontal scroll */
+  overflow-x: auto;
+  /* horizontal scroll */
   padding-bottom: 8px;
 }
 
@@ -335,17 +318,20 @@ input:focus {
 
 /* SINGLE CARD */
 .hour-card {
-  min-width: 40px;            /* card width */
-  height: 70px;              
+  min-width: 40px;
+  /* card width */
+  height: 70px;
   /* background: #ebfffc; */
   border-radius: 20px;
   border: 1px solid #0b3c91;
   padding: 12px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* top temp, center icon, bottom time */
+  justify-content: space-between;
+  /* top temp, center icon, bottom time */
   align-items: center;
-  flex-shrink: 0;             /* important for scroll */
+  flex-shrink: 0;
+  /* important for scroll */
 }
 
 /* TOP TEMP */
@@ -363,10 +349,10 @@ input:focus {
 /* TIME */
 .hour-time {
   font-size: 13px;
-  color:  #cdeeed;
+  color: #cdeeed;
 }
 
-.Date{
+.Date {
   display: flex;
   justify-content: space-between;
 }
